@@ -40,9 +40,56 @@ function ausgabeNamenParam(firstName) { //Parameter
 /***** Funktionen 02c *****/
 //2c. Mehrere Parameter
 
-ausgabeNamenParams("Maxine", "Mütze");
-ausgabeNamenParams(prompt("Vorname?"),prompt("Nachname?"));
+// ausgabeNamenParams("Maxine", "Mütze");
+// ausgabeNamenParams(prompt("Vorname?"),prompt("Nachname?"));
 
 function ausgabeNamenParams(firstName,familyName){ // Parameter
 console.log("Hallo " + firstName + " " + familyName + "!");
+}
+
+
+/***** Funktionen 03a *****/
+//03a. Vorbereitung 
+// Postulat: one function = one Job  (uncle Bob)
+//SRP single responsibility priciple
+// deu: Prinzip der Einzelverantwortung
+// https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip
+
+// ausgabeNamenParams2("Max","Mütze");
+
+function ausgabeNamenParams2(firstName,familyName){ // Parameter
+   
+    // 1. Funktionalität: String composing
+    // gap = Zwischenraum
+    const gap = " ";
+    const outputStr = "Hallo"+ gap + firstName + gap + familyName + "!"
+
+   
+    // 2. Funktionalität: data output
+    console.log(outputStr);
+
+}
+    
+
+/***** Funktionen 03b *****/
+// Trennen der Funktionalitäten | return
+
+
+// 1. Funktionalität: String composing
+
+output(getString("Irina","Nedosyp"));
+function getString(firstName,familyName)  {
+    const gap = " ";
+    const outputStr = "Hallo"+ gap + firstName + gap + familyName + "!";
+    return outputStr; // --> Daten zum Call
+    console.log("hi"); //rtun BEENDET die Funktion! 
+    // Nach return werden alle nachfolgenden Befehle ignoriert (innerhaln der Klammern)
+}
+
+
+// 2. Funktionalität: data output
+// output("Hi");
+function output(outoutData){
+    console.log(outoutData);
+
 }
